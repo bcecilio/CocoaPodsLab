@@ -3,11 +3,12 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 51;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		8AF303F56A6A65C23DDD32B3 /* Pods_CocoaPodsLab.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A140540695D72719526B76B7 /* Pods_CocoaPodsLab.framework */; };
+		B70E9E35240F0CB700A8DC2F /* UIViewAnimator Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B70E9E34240F0CB700A8DC2F /* UIViewAnimator Extension.swift */; };
 		B71A118D240E9BE4001FFB1F /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = B71A118C240E9BE4001FFB1F /* APIClient.swift */; };
 		B71A118F240E9C41001FFB1F /* Users.swift in Sources */ = {isa = PBXBuildFile; fileRef = B71A118E240E9C41001FFB1F /* Users.swift */; };
 		B71A1191240EA1A3001FFB1F /* UserCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B71A1190240EA1A3001FFB1F /* UserCell.swift */; };
@@ -18,12 +19,15 @@
 		B7EB6597240DEEC5007C9032 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7EB6596240DEEC5007C9032 /* ViewController.swift */; };
 		B7EB659C240DEEC9007C9032 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B7EB659B240DEEC9007C9032 /* Assets.xcassets */; };
 		B7EB659F240DEEC9007C9032 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B7EB659D240DEEC9007C9032 /* LaunchScreen.storyboard */; };
+		B7FF2295240EDD00006FDA39 /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7FF2294240EDD00006FDA39 /* DetailView.swift */; };
+		B7FF2298240EE818006FDA39 /* ImageKit in Frameworks */ = {isa = PBXBuildFile; productRef = B7FF2297240EE818006FDA39 /* ImageKit */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		94A1808E9F011802968849D3 /* Pods-CocoaPodsLab.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CocoaPodsLab.debug.xcconfig"; path = "Target Support Files/Pods-CocoaPodsLab/Pods-CocoaPodsLab.debug.xcconfig"; sourceTree = "<group>"; };
 		9C05FC10F212971633A60B3E /* Pods-CocoaPodsLab.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CocoaPodsLab.release.xcconfig"; path = "Target Support Files/Pods-CocoaPodsLab/Pods-CocoaPodsLab.release.xcconfig"; sourceTree = "<group>"; };
 		A140540695D72719526B76B7 /* Pods_CocoaPodsLab.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CocoaPodsLab.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B70E9E34240F0CB700A8DC2F /* UIViewAnimator Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewAnimator Extension.swift"; sourceTree = "<group>"; };
 		B71A118C240E9BE4001FFB1F /* APIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
 		B71A118E240E9C41001FFB1F /* Users.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Users.swift; sourceTree = "<group>"; };
 		B71A1190240EA1A3001FFB1F /* UserCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCell.swift; sourceTree = "<group>"; };
@@ -36,6 +40,7 @@
 		B7EB659B240DEEC9007C9032 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B7EB659E240DEEC9007C9032 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B7EB65A0240DEEC9007C9032 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B7FF2294240EDD00006FDA39 /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -44,6 +49,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8AF303F56A6A65C23DDD32B3 /* Pods_CocoaPodsLab.framework in Frameworks */,
+				B7FF2298240EE818006FDA39 /* ImageKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -90,9 +96,11 @@
 			children = (
 				B7EB6592240DEEC5007C9032 /* AppDelegate.swift */,
 				B7EB6594240DEEC5007C9032 /* SceneDelegate.swift */,
+				B70E9E34240F0CB700A8DC2F /* UIViewAnimator Extension.swift */,
 				B7EB6596240DEEC5007C9032 /* ViewController.swift */,
 				B71A1190240EA1A3001FFB1F /* UserCell.swift */,
 				B71A1194240EA21B001FFB1F /* MainView.swift */,
+				B7FF2294240EDD00006FDA39 /* DetailView.swift */,
 				B71A1192240EA1B1001FFB1F /* DetailController.swift */,
 				B71A118C240E9BE4001FFB1F /* APIClient.swift */,
 				B71A118E240E9C41001FFB1F /* Users.swift */,
@@ -121,6 +129,9 @@
 			dependencies = (
 			);
 			name = CocoaPodsLab;
+			packageProductDependencies = (
+				B7FF2297240EE818006FDA39 /* ImageKit */,
+			);
 			productName = CocoaPodsLab;
 			productReference = B7EB658F240DEEC5007C9032 /* CocoaPodsLab.app */;
 			productType = "com.apple.product-type.application";
@@ -149,6 +160,9 @@
 				Base,
 			);
 			mainGroup = B7EB6586240DEEC5007C9032;
+			packageReferences = (
+				B7FF2296240EE818006FDA39 /* XCRemoteSwiftPackageReference "ImageKit" */,
+			);
 			productRefGroup = B7EB6590240DEEC5007C9032 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -218,10 +232,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				B7EB6597240DEEC5007C9032 /* ViewController.swift in Sources */,
+				B7FF2295240EDD00006FDA39 /* DetailView.swift in Sources */,
 				B71A1195240EA21B001FFB1F /* MainView.swift in Sources */,
 				B71A1193240EA1B1001FFB1F /* DetailController.swift in Sources */,
 				B7EB6593240DEEC5007C9032 /* AppDelegate.swift in Sources */,
 				B71A1191240EA1A3001FFB1F /* UserCell.swift in Sources */,
+				B70E9E35240F0CB700A8DC2F /* UIViewAnimator Extension.swift in Sources */,
 				B71A118F240E9C41001FFB1F /* Users.swift in Sources */,
 				B7EB6595240DEEC5007C9032 /* SceneDelegate.swift in Sources */,
 				B71A118D240E9BE4001FFB1F /* APIClient.swift in Sources */,
@@ -416,6 +432,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		B7FF2296240EE818006FDA39 /* XCRemoteSwiftPackageReference "ImageKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/alexpaul/ImageKit";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.5;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		B7FF2297240EE818006FDA39 /* ImageKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B7FF2296240EE818006FDA39 /* XCRemoteSwiftPackageReference "ImageKit" */;
+			productName = ImageKit;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = B7EB6587240DEEC5007C9032 /* Project object */;
 }
