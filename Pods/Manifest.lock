@@ -1,0 +1,24 @@
+PODS:
+  - Alamofire (5.0.2)
+  - SnapKit (5.0.1)
+  - ViewAnimator (2.7.0)
+
+DEPENDENCIES:
+  - Alamofire
+  - SnapKit
+  - ViewAnimator
+
+SPEC REPOS:
+  trunk:
+    - Alamofire
+    - SnapKit
+    - ViewAnimator
+
+SPEC CHECKSUMS:
+  Alamofire: 3ba7a4db18b4f62c4a1c0e1cb39d7f3d52e10ada
+  SnapKit: 97b92857e3df3a0c71833cce143274bf6ef8e5eb
+  ViewAnimator: 5af1c6f3b310f012bf081259c43717aa54fbae73
+
+PODFILE CHECKSUM: 71a9d6b2a732966a46cd558d24d1ff1db6c1edad
+
+COCOAPODS: 1.9.0
