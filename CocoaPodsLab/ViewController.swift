@@ -32,26 +32,11 @@ class ViewController: UIViewController {
         main.collectionView.dataSource = self
         main.collectionView.register(UserCell.self, forCellWithReuseIdentifier: "userCell")
         getUsers()
-//        animate(animations: [main.collectionView])
-       
-
     }
     
     override func viewDidAppear(_ animated: Bool) {
       
     }
-    
-//    func animate(animations: [Animation],
-//    reversed: Bool = false,
-//    initialAlpha: CGFloat = 0.0,
-//    finalAlpha: CGFloat = 1.0,
-//    delay: Double = 0,
-//    duration: TimeInterval = ViewAnimatorConfig.duration,
-//    usingSpringWithDamping dampingRatio: CGFloat = ViewAnimatorConfig.springDampingRatio,
-//    initialSpringVelocity velocity: CGFloat = ViewAnimatorConfig.initialSpringVelocity,
-//    completion: (() -> Void)? = nil) {
-//
-//    }
     
     func getUsers() {
         APIClient.getUsers { [weak self] (result) in
@@ -77,15 +62,15 @@ extension ViewController: UICollectionViewDelegateFlowLayout, UICollectionViewDa
         }
         let userCell = usersRandom[indexPath.row]
         cell.configureCell(for: userCell)
-        let animation = AnimationType.from(direction: .left, offset: 80.0)
-                    view.animate(animations: [animation])
-//        view.animate(animations: <#T##[Animation]#>, reversed: <#T##Bool#>, initialAlpha: <#T##CGFloat#>, finalAlpha: <#T##CGFloat#>, delay: <#T##Double#>, duration: <#T##TimeInterval#>, usingSpringWithDamping: <#T##CGFloat#>, initialSpringVelocity: <#T##CGFloat#>, options: <#T##UIView.AnimationOptions#>, completion: <#T##(() -> Void)?##(() -> Void)?##() -> Void#>)
+        let animation = AnimationType.from(direction: .bottom, offset: 80.0)
+//        let rotate = AnimationType.rotate(angle: CGFloat.pi/3)
+//        cell.animate(animations: [animation])
+//        cell.animate(animations: [rotate])
+        cell.animate(animations: [animation], reversed: false, initialAlpha: 0.0, finalAlpha: 1.0, delay: 0.0, duration: 1.0, usingSpringWithDamping: 1.0, initialSpringVelocity: 1.0, options: [.curveLinear], completion: nil)
+//        let cells = collectionView.visibleCells(in: 1)
+//        UIView.animate(views: cells, animations: [animation])
         cell.layer.cornerRadius = 10
         cell.backgroundColor = .white
-//        let cells = main.collectionView.visibleCells(in: 1)
-//        let fadeAnimation = AnimationType.from(direction: .top, offset: 30.0)
-//        let rotateAnimation = AnimationType.rotate(angle: CGFloat.pi/9)
-//        UIView.animate(views: cells, animations: [rotateAnimation, fadeAnimation])
         return cell
     }
     
@@ -107,5 +92,23 @@ extension ViewController: UICollectionViewDelegateFlowLayout, UICollectionViewDa
         let users = usersRandom[indexPath.row]
         let detail = DetailController(userDetail: users)
         present(detail, animated: true)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didHighlightItemAt indexPath: IndexPath) {
+        UIView.animate(withDuration: 0.3) {
+            if let cell = collectionView.cellForItem(at: indexPath) as? UserCell {
+                cell.imageView.transform = .init(scaleX: 0.80, y: 0.80)
+                cell.contentView.backgroundColor = UIColor(red: 0.95, green: 0.95, blue: 0.95, alpha: 1)
+            }
+        }
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didUnhighlightItemAt indexPath: IndexPath) {
+        UIView.animate(withDuration: 0.3) {
+            if let cell = collectionView.cellForItem(at: indexPath) as? UserCell {
+                cell.imageView.transform = .identity
+                cell.contentView.backgroundColor = .clear
+            }
+        }
     }
 }

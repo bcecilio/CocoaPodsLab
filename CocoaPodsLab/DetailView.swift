@@ -31,6 +31,7 @@ class DetailView: UIView {
     
     public lazy var userEmailLabel: UILabel = {
         let label = UILabel()
+        label.numberOfLines = 0
         return label
     }()
     
@@ -82,30 +83,8 @@ class DetailView: UIView {
         userEmailLabel.snp.makeConstraints { (make) in
             make.top.equalTo(colorView).offset(80)
             make.leading.equalTo(colorView).offset(160)
+            make.trailing.equalTo(colorView).offset(-20)
         }
-    }
-    
-    private func generateRandomPastelColor(withMixedColor mixColor: UIColor?) -> UIColor {
-        // Randomly generate number in closure
-        let randomColorGenerator = { ()-> CGFloat in
-            CGFloat(arc4random() % 256 ) / 256
-        }
-            
-        var red: CGFloat = randomColorGenerator()
-        var green: CGFloat = randomColorGenerator()
-        var blue: CGFloat = randomColorGenerator()
-            
-        // Mix the color
-        if let mixColor = mixColor {
-            var mixRed: CGFloat = 0, mixGreen: CGFloat = 0, mixBlue: CGFloat = 0;
-            mixColor.getRed(&mixRed, green: &mixGreen, blue: &mixBlue, alpha: nil)
-            
-            red = (red + mixRed) / 2;
-            green = (green + mixGreen) / 2;
-            blue = (blue + mixBlue) / 2;
-        }
-            
-        return UIColor(red: red, green: green, blue: blue, alpha: 1)
     }
 }
 
@@ -117,27 +96,4 @@ extension UIColor {
         let randomColor = UIColor(red: redValue, green: greenValue, blue: blueValue, alpha: 0.6)
         return randomColor
     }
-    
-//    static func generateRandomPastelColor(withMixedColor mixColor: UIColor?) -> UIColor {
-//        // Randomly generate number in closure
-//        let randomColorGenerator = { ()-> CGFloat in
-//            CGFloat(arc4random() % 256 ) / 256
-//        }
-//
-//        var red: CGFloat = randomColorGenerator()
-//        var green: CGFloat = randomColorGenerator()
-//        var blue: CGFloat = randomColorGenerator()
-//
-//        // Mix the color
-//        if let mixColor = mixColor {
-//            var mixRed: CGFloat = 0, mixGreen: CGFloat = 0, mixBlue: CGFloat = 0;
-//            mixColor.getRed(&mixRed, green: &mixGreen, blue: &mixBlue, alpha: nil)
-//
-//            red = (red + mixRed) / 2;
-//            green = (green + mixGreen) / 2;
-//            blue = (blue + mixBlue) / 2;
-//        }
-//
-//        return UIColor(red: red, green: green, blue: blue, alpha: 1)
-//    }
 }
